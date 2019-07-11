@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "noEmit": true,
+    "lib": ["es2017", "dom", "esnext"],
+    "jsx": "react-native",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "plugins": [
+      {
+        "name": "typescript-tslint-plugin",
+        "alwaysShowRuleFailuresAsWarnings": false,
+        "ignoreDefinitionFiles": true,
+        "configFile": "./tslint.json",
+        "suppressWhileTypeErrorsPresent": false
+      }
+    ]
+  }
+}

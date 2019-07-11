@@ -1,0 +1,10 @@
+dependencies: \
+  /Users/ferryhinardi/Documents/Github/watcher-frontend/node_modules/react-native/ReactCommon/yoga/yoga/YGMarker.cpp \
+  /Users/ferryhinardi/Documents/Github/watcher-frontend/node_modules/react-native/ReactCommon/yoga/yoga/YGMarker.h \
+  /Users/ferryhinardi/Documents/Github/watcher-frontend/node_modules/react-native/ReactCommon/yoga/yoga/YGMacros.h \
+  /Users/ferryhinardi/Documents/Github/watcher-frontend/node_modules/react-native/ReactCommon/yoga/yoga/YGConfig.h \
+  /Users/ferryhinardi/Documents/Github/watcher-frontend/node_modules/react-native/ReactCommon/yoga/yoga/Yoga-internal.h \
+  /Users/ferryhinardi/Documents/Github/watcher-frontend/node_modules/react-native/ReactCommon/yoga/yoga/CompactValue.h \
+  /Users/ferryhinardi/Documents/Github/watcher-frontend/node_modules/react-native/ReactCommon/yoga/yoga/YGValue.h \
+  /Users/ferryhinardi/Documents/Github/watcher-frontend/node_modules/react-native/ReactCommon/yoga/yoga/YGEnums.h \
+  /Users/ferryhinardi/Documents/Github/watcher-frontend/node_modules/react-native/ReactCommon/yoga/yoga/Yoga.h
