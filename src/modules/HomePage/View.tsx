@@ -8,11 +8,16 @@ import { spacing } from '../../config';
 const styles = StyleSheet.create({
   container: { flex: 1 },
   contentContainerStyle: { marginHorizontal: spacing['spacing-03'] },
-  columnWrapperStyle: { marginVertical: spacing['spacing-02'], justifyContent: 'space-between' },
+  columnWrapperStyle: {
+    marginVertical: spacing['spacing-02'],
+    justifyContent: 'space-between',
+  },
 });
 
 function HomePageView() {
-  const data = Array(5).fill(5).map((_, index) => index);
+  const data = Array(5)
+    .fill(5)
+    .map((_, index) => index);
 
   function _renderItem({ item }: { item: any }) {
     return <MovieCard {...item} />;
@@ -32,7 +37,7 @@ function HomePageView() {
 }
 
 HomePageView.navigationOptions = {
-  header: <Header />
+  header: <Header />,
 };
 
 export default HomePageView;

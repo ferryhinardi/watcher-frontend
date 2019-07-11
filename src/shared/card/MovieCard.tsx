@@ -1,5 +1,10 @@
 import React from 'react';
-import { StyleSheet, ImageBackground, Text, TouchableOpacity } from 'react-native';
+import {
+  StyleSheet,
+  ImageBackground,
+  Text,
+  TouchableOpacity,
+} from 'react-native';
 import { withNavigation } from 'react-navigation';
 import { border, color, screenWidth, spacing } from '../../config';
 import withImagePixel from '../../wrapper/withImagePixel';
@@ -26,9 +31,12 @@ function MovieCard(props) {
   }
 
   return (
-    <TouchableOpacity activeOpacity={.8} onPress={handleCardClick}>
+    <TouchableOpacity activeOpacity={0.8} onPress={handleCardClick}>
       <Background
-        source={{ uri: 'https://image.tmdb.org/t/p/w185/or06FN3Dka5tukK1e9sl16pB3iy.jpg' }}
+        source={{
+          uri:
+            'https://image.tmdb.org/t/p/w185/or06FN3Dka5tukK1e9sl16pB3iy.jpg',
+        }}
         style={styles.container}
         resizeMode="cover"
         width={cardWidth}

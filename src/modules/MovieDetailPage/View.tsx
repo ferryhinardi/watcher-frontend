@@ -1,7 +1,14 @@
-import React from 'react';
-import { View, Text, ImageBackground, Dimensions, TouchableOpacity, StyleSheet } from 'react-native';
+import React, { useState } from 'react';
+import {
+  View,
+  Text,
+  ImageBackground,
+  Dimensions,
+  TouchableOpacity,
+  StyleSheet,
+} from 'react-native';
 import LottieView from 'lottie-react-native';
-
+import MovieModal from '../MovieModal';
 import { screenWidth, spacing, fontSize, color } from '../../config';
 import withImagePixel from '../../wrapper/withImagePixel';
 
@@ -18,7 +25,11 @@ const styles = StyleSheet.create({
     opacity: 1,
   },
   iconPlay: { width: iconSize, height: iconSize },
-  wrapperHeaderTitle: { padding: spacing['spacing-05'], borderTopWidth: 1, borderBottomWidth: 1 },
+  wrapperHeaderTitle: {
+    padding: spacing['spacing-05'],
+    borderTopWidth: 1,
+    borderBottomWidth: 1,
+  },
   headerTitle: { fontSize: fontSize['size-03'] },
   content: { padding: spacing['spacing-05'] },
   contentText: { lineHeight: 20 },
@@ -28,16 +39,34 @@ const Background = withImagePixel(ImageBackground);
 const movieBackgroundWidth = screenWidth;
 
 function MovieDetailPageView() {
+  const [visible, setVisible] = useState(false);
+
+  function handleOpenModal() {
+    setVisible(true);
+  }
+  function handleCloseModal() {
+    setVisible(false);
+  }
+
   return (
     <View>
       <View style={styles.header}>
         <Background
-          source={{ uri: 'https://image.tmdb.org/t/p/w780/7RyHsO4yDXtBv1zUU3mTpHeQ0d5.jpg' }}
+          source={{
+            uri:
+              'https://image.tmdb.org/t/p/w780/7RyHsO4yDXtBv1zUU3mTpHeQ0d5.jpg',
+          }}
           width={movieBackgroundWidth}
           style={styles.imageContainer}
-          imageStyle={styles.imageStyle}>
-          <TouchableOpacity activeOpacity={.8}>
-            <LottieView source={require('../../lotties/play.json')} autoPlay loop style={styles.iconPlay} />
+          imageStyle={styles.imageStyle}
+        >
+          <TouchableOpacity activeOpacity={0.8} onPress={handleOpenModal}>
+            <LottieView
+              source={require('../../lotties/play.json')}
+              autoPlay
+              loop
+              style={styles.iconPlay}
+            />
           </TouchableOpacity>
           <Text style={styles.title}>Avengers: Endgame (2019)</Text>
         </Background>
@@ -50,12 +79,14 @@ function MovieDetailPageView() {
           {`The turning point of the beloved heroes' epic journey, as they come to truly understand how fragile their reality is and the sacrifices that must be made to uphold it.`}
         </Text>
       </View>
+      <MovieModal visible={visible} dismiss={handleCloseModal} />
     </View>
   );
 }
 
 MovieDetailPageView.navigationOptions = {
-  header: null,
+  headerTransparent: true,
+  headerStyle: {},
 };
 
 export default MovieDetailPageView;

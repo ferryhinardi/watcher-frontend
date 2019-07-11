@@ -3,6 +3,7 @@ import { Dimensions, Platform } from 'react-native';
 export const color = {
   primary: '#456b7d',
   white: '#fff',
+  black: '#000',
 };
 
 export const border = {
