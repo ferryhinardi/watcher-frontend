@@ -27,22 +27,19 @@ const Background = withImagePixel(ImageBackground);
 
 function MovieCard(props) {
   function handleCardClick() {
-    props.navigation.navigate(ROUTES.MOVIE_DETAIL);
+    props.navigation.navigate(ROUTES.MOVIE_DETAIL, { movieId: props.id });
   }
 
   return (
     <TouchableOpacity activeOpacity={0.8} onPress={handleCardClick}>
       <Background
-        source={{
-          uri:
-            'https://image.tmdb.org/t/p/w185/or06FN3Dka5tukK1e9sl16pB3iy.jpg',
-        }}
+        source={{ uri: props.imageUrl }}
         style={styles.container}
         resizeMode="cover"
         width={cardWidth}
         imageStyle={styles.imageStyle}
       >
-        <Text style={styles.title}>Avengers: Endgame (2019)</Text>
+        <Text style={styles.title}>{props.title}</Text>
       </Background>
     </TouchableOpacity>
   );

@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
 const Background = withImagePixel(ImageBackground);
 const movieBackgroundWidth = screenWidth;
 
-function MovieDetailPageView() {
+function MovieDetailPageView(props) {
   const [visible, setVisible] = useState(false);
 
   function handleOpenModal() {
@@ -53,8 +53,7 @@ function MovieDetailPageView() {
       <View style={styles.header}>
         <Background
           source={{
-            uri:
-              'https://image.tmdb.org/t/p/w780/7RyHsO4yDXtBv1zUU3mTpHeQ0d5.jpg',
+            uri: props.imageDetailUrl,
           }}
           width={movieBackgroundWidth}
           style={styles.imageContainer}
@@ -68,18 +67,20 @@ function MovieDetailPageView() {
               style={styles.iconPlay}
             />
           </TouchableOpacity>
-          <Text style={styles.title}>Avengers: Endgame (2019)</Text>
+          <Text style={styles.title}>{props.title}</Text>
         </Background>
       </View>
       <View style={styles.wrapperHeaderTitle}>
         <Text style={styles.headerTitle}>Synopsis</Text>
       </View>
       <View style={styles.content}>
-        <Text style={styles.contentText}>
-          {`The turning point of the beloved heroes' epic journey, as they come to truly understand how fragile their reality is and the sacrifices that must be made to uphold it.`}
-        </Text>
+        <Text style={styles.contentText}>{props.synopsis}</Text>
       </View>
-      <MovieModal visible={visible} dismiss={handleCloseModal} />
+      <MovieModal
+        visible={visible}
+        dismiss={handleCloseModal}
+        videoSource={{ uri: props.url }}
+      />
     </View>
   );
 }

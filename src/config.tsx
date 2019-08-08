@@ -49,3 +49,7 @@ export const defaultNavigationOptions = {
     backgroundColor: color.primary,
   },
 };
+
+export default {
+  API_HOST: 'https://watcher-backend.herokuapp.com',
+};

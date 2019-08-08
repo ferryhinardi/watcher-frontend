@@ -14,11 +14,7 @@ const styles = StyleSheet.create({
   },
 });
 
-function HomePageView() {
-  const data = Array(5)
-    .fill(5)
-    .map((_, index) => index);
-
+function HomePageView(props) {
   function _renderItem({ item }: { item: any }) {
     return <MovieCard {...item} />;
   }
@@ -27,7 +23,7 @@ function HomePageView() {
     <FlatList
       keyExtractor={flatListKeyExtractor}
       numColumns={2}
-      data={data}
+      data={props.data}
       renderItem={_renderItem}
       style={styles.container}
       contentContainerStyle={styles.contentContainerStyle}
